@@ -51,7 +51,7 @@ public class Game extends Canvas implements Runnable {
         // 60 ticks per second
 
         double nanoSecondsPerSecond = 1000000000D;
-        double ticksPerSecond = 60D;
+        double ticksPerSecond = 10D;
 
         double nanoSecondsPerTick = nanoSecondsPerSecond / ticksPerSecond;
 
@@ -59,6 +59,7 @@ public class Game extends Canvas implements Runnable {
         int frames = 0;
 
         long lastTimer = System.currentTimeMillis();
+//        long lastTimer = System.nanoTime();
         double delta = 0;
 
         while (running) {
@@ -77,6 +78,8 @@ public class Game extends Canvas implements Runnable {
 
                 shouldRender = true;
             }
+
+            // Should render tickPerSecond
 
             if (shouldRender) {
 
